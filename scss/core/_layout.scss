@@ -1,0 +1,156 @@
+@mixin layout-tags {
+	html ,
+	body {
+		height: 100%;
+	}
+
+	html {
+		font-size: 100%;
+	}
+
+	body {
+		-webkit-text-size-adjust: 100%;
+		color: color(1);
+
+		* {
+			@include box-sizing(border-box);
+		}
+
+	}
+
+	a {
+		& ,
+		&:before ,
+		&:after {
+			@include transition(all $mouseover linear);
+		}
+
+		> * {
+			@include transition(all $mouseover linear);
+		}
+
+		&:hover {
+			@include opacity(.7);
+
+			> * {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+@mixin layout-container {
+	#container {
+		position: relative;
+		min-height: 100%;
+		@include sp() {
+			//overflow-x: hidden;
+		}
+
+		* html & {
+			height: 100%;
+		}
+
+		body > & {
+			height: auto;
+		}
+	}
+}
+
+@mixin common {
+	//placeholderでやる必要性を検討
+	//%pie {
+	//	@include pie-element(relative);
+	//}
+
+	.fll {
+		float: left;
+	}
+
+	.flr {
+		float: right;
+	}
+
+	.sp_none {
+		@include pc() {
+			display: block;
+		}
+		@include sp() {
+			display: none;
+		}
+	}
+
+	.pc_none {
+		@include pc() {
+			display: none;
+		}
+		@include sp() {
+			display: block;
+		}
+	}
+
+	.right-nav {
+		display: none;
+		position: fixed;
+		bottom: 10px;
+		right: 10px;
+		z-index: 1000;
+
+		a {
+			@include transition(opacity $mouseover linear);
+			display: block;
+
+			&:hover {
+				@include opacity(.7);
+			}
+		}
+
+		img {
+			@include sp() {
+				width: 45px;
+				height: 45px;
+			}
+		}
+	}
+
+	#drawernav{
+		@include pc() {
+			display: none;
+		}
+	}
+
+}
+
+@mixin layout-header {
+	.header {
+		position: relative;
+	}
+}
+
+@mixin layout-content {
+	#content {
+	}
+}
+
+@mixin layout-main {
+
+	.topicpath {
+	}
+
+	.topicpath-item {
+	}
+
+	.main {
+	}
+
+}
+
+@mixin layout-sub {
+	.side {
+	}
+}
+
+@mixin layout-footer {
+	.footer {
+	}
+}

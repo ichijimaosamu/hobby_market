@@ -1,0 +1,320 @@
+@charset "UTF-8";
+/*----------------------------------------------------------------------
+------------------------------------------------------------------------
+
+File Name: top.scss
+
+------------------------------------------------------------------------
+----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------
+------------------------------------------------------------------------
+目次
+
+1.	共通使用変数定義
+2.	ブラウザデフォルトスタイルリセット
+3.	HTMLタグ
+4.	container
+5.	共通部分
+6.	header
+7.	content
+8.	main
+9.	sub
+10.	footer
+11.	ページ別個別設定
+
+------------------------------------------------------------------------
+----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------
+1.	共通使用変数定義
+----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------
+2.	ブラウザデフォルトスタイルリセット
+----------------------------------------------------------------------*/
+body,
+h1, h2, h3, h4, h5, h6,
+div,
+p,
+ul, ol, dl,
+form, fieldset,
+table,
+address,
+blockquote,
+noscript,
+pre,
+tr,
+td,
+input,
+textarea {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-style: normal;
+}
+
+body {
+  font-size: 10px;
+  font-family: "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", arial, helvetica, sans-serif;
+}
+
+* html body {
+  font-size: 62.5%;
+}
+
+* + html body {
+  font-size: 62.5%;
+}
+
+/* start \*/
+html:\66irst-child body {
+  font-size: 62.5%;
+}
+
+/* end */
+body:first-of-type {
+  font-size: 62.5%;
+}
+
+body > iframe {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+small {
+  font-size: 1em;
+}
+
+mark {
+  background: none;
+}
+
+fieldset {
+  border: none;
+}
+
+legend {
+  display: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  font-size: inherit;
+  font: 100%;
+}
+
+li {
+  list-style-type: none;
+}
+
+dd {
+  margin: 0;
+}
+
+a,
+abbr,
+acronym,
+em,
+strong,
+span,
+img,
+sub,
+sup,
+input,
+button,
+textarea,
+select,
+label,
+caption {
+  font-weight: normal;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  border: none;
+  vertical-align: bottom;
+}
+@media screen and (max-width: 768px) {
+  img {
+    width: 100%;
+  }
+}
+
+caption, th {
+  font-weight: normal;
+  text-align: left;
+}
+
+th, td {
+  padding: 0px;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea {
+  vertical-align: top;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+header, footer, article, section, aside,
+nav,
+figure, figcaption {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/*----------------------------------------------------------------------
+3.	HTMLタグ
+----------------------------------------------------------------------*/
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  -webkit-text-size-adjust: 100%;
+  color: #444;
+}
+body * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+a, a:before, a:after {
+  -moz-transition: all 0.15s linear;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+a > * {
+  -moz-transition: all 0.15s linear;
+  -webkit-transition: all 0.15s linear;
+  transition: all 0.15s linear;
+}
+a:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+a:hover > * {
+  text-decoration: none;
+}
+
+/*----------------------------------------------------------------------
+4.	container
+----------------------------------------------------------------------*/
+#container {
+  position: relative;
+  min-height: 100%;
+}
+* html #container {
+  height: 100%;
+}
+body > #container {
+  height: auto;
+}
+
+/*----------------------------------------------------------------------
+5.	共通部分
+----------------------------------------------------------------------*/
+.fll {
+  float: left;
+}
+
+.flr {
+  float: right;
+}
+
+@media screen and (min-width: 769px) {
+  .sp_none {
+    display: block;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sp_none {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .pc_none {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pc_none {
+    display: block;
+  }
+}
+
+.right-nav {
+  display: none;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1000;
+}
+.right-nav a {
+  -moz-transition: opacity 0.15s linear;
+  -webkit-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+  display: block;
+}
+.right-nav a:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+}
+@media screen and (max-width: 768px) {
+  .right-nav img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #drawernav {
+    display: none;
+  }
+}
+
+/*----------------------------------------------------------------------
+6.	#header
+----------------------------------------------------------------------*/
+.header {
+  position: relative;
+}
+
+/*----------------------------------------------------------------------
+7.	#content
+----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------
+8.	#main
+----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------
+9.	#sub
+----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------
+10.	#footer
+----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------
+11.	ページ別個別設定
+----------------------------------------------------------------------*/
+
+/*# sourceMappingURL=top.css.map */
